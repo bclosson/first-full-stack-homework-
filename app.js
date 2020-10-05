@@ -2,27 +2,25 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
+// Equipment Controller
+const equipCntrl = require('./controllers/controllerEquip');
 const equipment = require('./models/equipment');
 
 app.set('view engine', 'ejs');
 
-app.get('/equipment/:index', (req, res) => {
-    res.render('show', {
-        equipment: equipment[req.params.index]
-    });
-});
 
-app.get('/equipment', (req, res) => {
-    res.render('index', {
-        equipment: equipment,
-    });
-});
 
+// ------------------ ROUTES
+
+// Home Route
 app.get('/', (req, res) => {
     res.send('This is Some Text');
 });
 
+// Equipment Routes 
+app.use('/equipment', equipCntrl);
 
+// Listener 
 app.listen(PORT, () => {
     console.log('listening');
 });

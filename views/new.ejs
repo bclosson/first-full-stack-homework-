@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Equipment</title>
+</head>
+    <body>
+    <h1>Create New Equipment</h1>
+
+    <!------In form action is the route and method is the HTTP verb ----->
+        <form action="/equipment" method="POST">
+            Name: <input type="text" name="name"/><br/>
+            Type Of Power: <input type="text" name="typeOfPower"/><br/>
+            Potential Injury: <input type="text" name="typeOfInjury"/><br/>
+            SOP Complete: <input type="checkbox" name="SOP"/><br/>
+            <input type="submit" name="" value="Create Equipment"/>
+        </form>
+    </body>
+</html>
