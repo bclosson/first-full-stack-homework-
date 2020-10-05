@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Show</title>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/equipment">All Equipment</a>
+        <a href="/equipment/show">Add Equipment</a>
+    </nav>
+
+    <h1>Equipment Show Page</h1>
+    <h2>Name: <%= equipment.name %></h2>
+    <h4>Type of Power: <%= equipment.power %></h4>
+    <h4>Potential Injury: <%= equipment.injury %></h4>
+    <% if (equipment.SOP === true) { %>
+        Please post SOP for the team.
+    <% } else { %>
+        Please create a SOP for this piece of equipment.
+    <% } %>
+
+</body>
+</html>

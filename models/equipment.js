@@ -1,4 +1,4 @@
-const equipment = [
+const Equipment = [
     {
         name: 'oven',
         power: 'gas',
@@ -25,4 +25,4 @@ const equipment = [
      },
 ];
 
-module.exports = equipment;
+module.exports = Equipment;

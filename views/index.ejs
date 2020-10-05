@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment List</title>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/equipment">All Equipment</a>
+        <a href="/equipment/show">Add Equipment</a>
+    </nav>
+
+    <h1>Equipment List</h1>
+
+    <ul>
+        <% equipment.forEach((equip, i) => { %>
+        <li>
+            <a href="/equipment/<%= i %>"><%= equip.name %></a>
+        </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
