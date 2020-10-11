@@ -1,28 +1,23 @@
-const Equipment = [
-    {
-        name: 'oven',
-        power: 'gas',
-        injury: ['burn'],
-        SOP: true,
-     }, 
-     {
-         name: 'immersion-blender', 
-         power: 'electricity',
-         injury: ['cut', 'burn'],
-         SOP: true,
-     },
-     {
-         name: 'food-processor',
-         power: 'electricity',
-         injury: ['cut', 'burn'],
-         SOP: false,
-     }, 
-     {
-         name: 'fryer',
-         power: ['gas', 'electricity'],
-         injury: ['burn'],
-         SOP: true,
-     },
-];
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const equipmentSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    power: {
+        type: String,
+        required: true,
+    },
+    injury: {
+        type: String,
+        required: true,
+    },
+     SOP: Boolean,
+}, {timestamps: true});
+
+const Equipment = mongoose.model('Equipment', equipmentSchema);
 
 module.exports = Equipment;
+

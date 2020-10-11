@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Equipment</title>
+</head>
+<body>
+    <h1>Edit Equipment</h1>
+
+    <form action="/equipment/<%= equipment._id %>?_method=PUT" method="POST">
+        <div>
+        <label for="name">Name: </label>
+        <input type="text" name="name" value="<%= equipment.name %>"/>
+        </div>
+
+        <div>
+        <label type="text" name="typeOfPower">labelType of Power: </label>
+        <input type="text" name="typeOfPower" value="<%= equipment.power %>"/>
+        </div>
+
+        <div>
+        <label type="text" name="typeOfInjury">Potential Injury: </label>
+        <input type="text" name="typeOfInjury" value="<%= equipment.injury %>"/>
+        </div>
+
+        <div>
+        <label type="checkbox" name="SOP">SOP Complete: </label>
+        <input type="checkbox" name="SOP"
+            <% if (equipment.SOP === true) { %>
+                checked
+            <% } %>
+        />
+        </div>
+
+        <input type="submit" name="" value="Submit Changes"/>
+    </form>
+</body>
+</html>

@@ -16,11 +16,15 @@
     <h1>Equipment List</h1>
 
     <ul>
-        <% equipment.forEach((equip, i) => { %>
-        <li>
-            <a href="/equipment/<%= i %>"><%= equip.name %></a>
+        <% for (let i = 0; i < equipment.length; i++) { %>
+        <li style="margin-bottom: 20px;">
+            <a href="/equipment/<%= equipment[i]._id %>">
+                <%= equipment[i].name %>
+            </a>
+           
         </li>
-        <% }); %>
+
+        <% }; %>
     </ul>
 </body>
 </html>

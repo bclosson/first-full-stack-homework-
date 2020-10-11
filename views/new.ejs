@@ -6,15 +6,35 @@
     <title>Create New Equipment</title>
 </head>
     <body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/equipment">All Equipment</a>
+        <a href="/equipment/new">Add Equipment</a>
+    </nav>
+
     <h1>Create New Equipment</h1>
 
-    <!------In form action is the route and method is the HTTP verb ----->
+    <!------ In form action is the route and method is the HTTP verb ----->
         <form action="/equipment" method="POST">
-            Name: <input type="text" name="name"/><br/>
-            Type Of Power: <input type="text" name="typeOfPower"/><br/>
-            Potential Injury: <input type="text" name="typeOfInjury"/><br/>
-            SOP Complete: <input type="checkbox" name="SOP"/><br/>
-            <input type="submit" name="" value="Create Equipment"/>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name"/>
+            </div>
+            <div>
+                <label for="power">Type Of Power</label>
+                <input type="text" id="power" name="power"/>
+            </div>
+            <div>
+                <label for="injury">Potential Injury</label>
+                <input type="text" id="injury" name="injury"/>
+            </div>
+            <div>
+                <label for="SOP">SOP Complete</label>
+                <input type="checkbox" id="SOP" name="SOP"/>
+            </div>
+    <!--------------------------- button add equipment -------------------->
+            <input type="submit" value="Add Equipment"/>
         </form>
     </body>
 </html>

@@ -14,8 +14,11 @@
     </nav>
 
     <h1>Equipment Show Page</h1>
+    <%  if (equipment) { %>
     <h2>Name: <%= equipment.name %></h2>
+
     <h4>Type of Power: <%= equipment.power %></h4>
+
     <h4>Potential Injury: <%= equipment.injury %></h4>
     <% if (equipment.SOP === true) { %>
         Please post SOP for the team.
@@ -23,5 +26,15 @@
         Please create a SOP for this piece of equipment.
     <% } %>
 
+    <form action="/equipment/<%= equipment._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE"/>
+    </form>
+
+    <form action="/equipment/<%= equipment._id %>/edit" method="GET">
+        <input type="submit" value="EDIT"/>
+    </form>
+    <% } else { %>
+        <h2>No Equipment Found</h2>
+        <% } %>
 </body>
 </html>
